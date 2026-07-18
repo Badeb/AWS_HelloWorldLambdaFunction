@@ -16,9 +16,6 @@
             "cognito-idp:DescribeUserPool",
             "cognito-idp:GetUser",
             "cognito-idp:ListUsers",
-            "cognito-idp:AdminRespondToAuthChallenge",
-            "cognito-idp:AdminConfirmSignUp",
-            "cognito-idp:AdminSetUserPassword",
             "cognito-idp:AdminCreateUser",
             "cognito-idp:AdminInitiateAuth",
             "cognito-idp:GetIdentityProviderByIdentifier",
@@ -109,8 +106,7 @@
       "/tables": {
         "enable_cors": true,
         "GET": {
-          "authorization_type": "CUSTOM",
-          "authorizer_name": "authorizer",
+          "authorization_type": "authorizer",
           "integration_type": "lambda",
           "lambda_name": "api_handler",
           "api_key_required": false,
@@ -123,8 +119,7 @@
           "authorization_scopes": []
         },
         "POST": {
-          "authorization_type": "CUSTOM",
-          "authorizer_name": "authorizer",
+          "authorization_type": "authorizer",
           "integration_type": "lambda",
           "lambda_name": "api_handler",
           "api_key_required": false,
@@ -140,8 +135,7 @@
       "/tables/{tableId}": {
         "enable_cors": true,
         "GET": {
-          "authorization_type": "CUSTOM",
-          "authorizer_name": "authorizer",
+          "authorization_type": "authorizer",
           "integration_type": "lambda",
           "lambda_name": "api_handler",
           "api_key_required": false,
@@ -156,9 +150,8 @@
       },
       "/reservations": {
         "enable_cors": true,
-        "GET": {
-          "authorization_type": "CUSTOM",
-          "authorizer_name": "authorizer",
+        "POST": {
+          "authorization_type": "authorizer",
           "integration_type": "lambda",
           "lambda_name": "api_handler",
           "api_key_required": false,
@@ -170,9 +163,8 @@
           "default_error_pattern": true,
           "authorization_scopes": []
         },
-        "POST": {
-          "authorization_type": "CUSTOM",
-          "authorizer_name": "authorizer",
+        "GET": {
+          "authorization_type": "authorizer",
           "integration_type": "lambda",
           "lambda_name": "api_handler",
           "api_key_required": false,
